@@ -25,6 +25,9 @@ app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 // Routes
 app.use('/api', contactRoutes);
 app.use('/api/blogs', blogRoutes);
+app.get('/', (req, res) => {
+  res.send('API working ');
+});
 
 // MongoDB connection with updated configuration
 mongoose.connect(process.env.MONGODB_URI)
