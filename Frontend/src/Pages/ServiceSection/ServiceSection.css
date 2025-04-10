@@ -1,0 +1,152 @@
+/* Services Section */
+#services {
+  padding: 60px 20px;
+  background: url('../../assets/abstract-digital-grid-black-background.jpg') no-repeat center center/cover;
+  text-align: center;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Section Title */
+#services h2 {
+  font-size: 36px;
+  color: #8ac656; /* Light green */
+  margin-bottom: 40px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  animation: fadeInUp 1s ease-in-out;
+}
+
+#services h2::after {
+  content: "";
+  width: 60px;
+  height: 4px;
+  background: #8ac656; /* Light green */
+  display: block;
+  margin: 10px auto 0;
+  border-radius: 2px;
+  transition: width 0.3s ease-in-out;
+}
+
+#services h2:hover::after {
+  width: 100px;
+}
+
+/* Service Container */
+.service-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+/* Service Card Styling */
+.service-card {
+  width: 320px;
+  padding: 20px;
+  background: transparent; /* Semi-transparent dark */
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(12px); /* Blur effect */
+  -webkit-backdrop-filter: blur(12px); /* Safari support */
+  animation: fadeIn 1.5s ease-in-out;
+}
+
+.service-card:hover {
+  transform: scale(1.05) rotate(2deg);
+  box-shadow: 0 15px 35px rgba(0, 255, 0, 0.5); /* Bright green glow */
+}
+
+/* Service Content */
+.service-content {
+  padding: 15px;
+  animation: fadeInUp 1.8s ease-in-out;
+}
+
+.service-image {
+  width: 80px;
+  height: auto;
+  margin-bottom: 15px;
+  animation: bounceIn 1.5s ease-in-out;
+}
+
+/* Service Title Link */
+.service-title-link {
+  color: #8ac656;
+  text-decoration: none;
+  font-size: 22px;
+  font-weight: 700;
+  display: block;
+  margin-bottom: 10px;
+  transition: color 0.3s ease-in-out;
+}
+
+.service-title-link:hover {
+  color: #a8e065; /* Lighter green */
+  text-shadow: 0 0 8px rgba(138, 198, 86, 0.8);
+}
+
+/* Service Description */
+.service-content p {
+  color: #dddddd; /* Light gray */
+  font-size: 16px;
+  line-height: 1.6;
+  animation: fadeInUp 2s ease-in-out;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .service-card {
+    width: 80%;
+  }
+}
+
+@media (max-width: 480px) {
+  .service-card {
+    width: 90%;
+  }
+
+  .service-title-link {
+    font-size: 20px;
+  }
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes bounceIn {
+  0% {
+    opacity: 0;
+    transform: scale(0.5);
+  }
+  60% {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
