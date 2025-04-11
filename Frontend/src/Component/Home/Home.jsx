@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { FaRocket, FaShieldAlt, FaHeadset, FaWhatsapp, FaPhone } from "react-icons/fa";
 import "./Home.css";
@@ -8,10 +8,55 @@ import heroImage from "../../assets/971.jpg";
 import webDevImg from "../../assets/web-development.png";
 import brandingImg from "../../assets/Branding-GraphicDesign.png";
 import digitalMarketingImg from "../../assets/Digital-Marketing.png";
+import slide1 from "../../assets/1.jpg";
+import slide2 from "../../assets/2.jpg";
+import slide3 from "../../assets/3.jpg";
+import slide4 from "../../assets/4.jpg";
+import slide5 from "../../assets/5.jpg";
+import slide6 from "../../assets/6.jpg";
 
 const Home = () => {
+  const [currentSlide, setCurrentSlide] = useState(0);
+  const slides = [slide1, slide2, slide3, slide4, slide5, slide6];
+
+  useEffect(() => {
+    const timer = setInterval(() => {
+      setCurrentSlide((prevSlide) => (prevSlide + 1) % slides.length);
+    }, 5000); // 5000ms = 5 seconds
+
+    return () => clearInterval(timer);
+  }, []);
+
   return (
     <div className="home">
+      {/* Image Slider */}
+      <div className="slider-container">
+        <div className="slider" style={{ transform: `translateX(-${currentSlide * 100}%)` }}>
+          {slides.map((slide, index) => (
+            <div key={index} className="slide">
+              <img src={slide} alt={`Slide ${index + 1}`} />
+            </div>
+          ))}
+        </div>
+        <div className="slider-nav">
+          <button className="nav-button prev" onClick={() => setCurrentSlide((prev) => (prev - 1 + slides.length) % slides.length)}>
+            ‹
+          </button>
+          <button className="nav-button next" onClick={() => setCurrentSlide((prev) => (prev + 1) % slides.length)}>
+            ›
+          </button>
+        </div>
+        <div className="slider-dots">
+          {slides.map((_, index) => (
+            <div
+              key={index}
+              className={`dot ${currentSlide === index ? "active" : ""}`}
+              onClick={() => setCurrentSlide(index)}
+            ></div>
+          ))}
+        </div>
+      </div>
+
       {/* Hero Section */}
       <section className="hero">
         <div className="hero-content">
