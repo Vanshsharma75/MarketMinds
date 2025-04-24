@@ -1,28 +1,424 @@
+/* Main Styles for Website Development Page */
 .service-page {
-  padding: 40px 20px;
-  max-width: 1200px;
-  margin: 0 auto;
-  background: url('../../assets/abstract-digital-grid-black-background.jpg') no-repeat center center/cover;
+  background-color: #000000;
+  color: #ffffff;
+  padding: 80px 20px;
+  min-height: 100vh;
 }
 
 .service-section {
-  background: #ffffff;
-  border-radius: 8px;
-  padding: 30px;
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  margin-bottom: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
 }
 
 .service-title {
-  color: #333;
-  font-size: 2.25rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
+  text-align: center;
+  color: #8ac656;
+  font-size: 2.8rem;
+  margin-bottom: 40px;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  position: relative;
+}
+
+.service-title::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: #8ac656;
+  box-shadow: 0 0 10px rgba(138, 198, 86, 0.5);
+}
+
+/* Hero Section */
+.web-service-hero {
+  width: 100%;
+  margin-bottom: 40px;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  position: relative;
+}
+
+.hero-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  transition: transform 0.5s ease;
+}
+
+.web-service-hero:hover .hero-image {
+  transform: scale(1.02);
 }
 
 .service-description {
-  color: #666;
-  font-size: 1.125rem;
-  line-height: 1.75;
-  margin-bottom: 1rem;
+  font-size: 1.1rem;
+  line-height: 1.8;
+  margin-bottom: 25px;
+  color: rgba(255, 255, 255, 0.9);
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Highlights Section */
+.web-highlights {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 30px;
+  margin: 60px 0;
+}
+
+.highlight-card {
+  background: rgba(13, 17, 23, 0.85);
+  border-radius: 15px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(138, 198, 86, 0.2);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.highlight-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 30px rgba(138, 198, 86, 0.3);
+  border-color: rgba(138, 198, 86, 0.4);
+}
+
+.highlight-image-container {
+  width: 100%;
+  height: 200px;
+  overflow: hidden;
+}
+
+.highlight-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.highlight-card:hover .highlight-image {
+  transform: scale(1.1);
+}
+
+.highlight-content {
+  padding: 25px;
+  flex: 1;
+}
+
+.highlight-content h3 {
+  color: #8ac656;
+  font-size: 1.5rem;
+  margin-bottom: 15px;
+  position: relative;
+  padding-bottom: 10px;
+}
+
+.highlight-content h3::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 50px;
+  height: 2px;
+  background: #8ac656;
+}
+
+.highlight-content p {
+  color: rgba(255, 255, 255, 0.9);
+  line-height: 1.7;
+}
+
+/* Services Grid */
+.web-services {
+  margin: 60px 0;
+}
+
+.web-services h3 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-bottom: 30px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 20px;
+}
+
+.service-item {
+  background: rgba(13, 17, 23, 0.85);
+  border-radius: 10px;
+  padding: 20px;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(138, 198, 86, 0.1);
+  display: flex;
+  align-items: flex-start;
+  gap: 15px;
+}
+
+.service-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(138, 198, 86, 0.2);
+  border-color: rgba(138, 198, 86, 0.3);
+}
+
+.service-icon {
+  color: #8ac656;
+  font-size: 1.5rem;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.service-item:hover .service-icon {
+  transform: translateX(5px);
+}
+
+.service-item h4 {
+  color: #ffffff;
+  font-size: 1.1rem;
+  margin: 0;
+  font-weight: 500;
+}
+
+/* Development Process */
+.development-process {
+  margin: 60px 0;
+}
+
+.development-process h3 {
+  text-align: center;
+  color: #ffffff;
+  font-size: 1.8rem;
+  margin-bottom: 40px;
+}
+
+.process-steps {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+}
+
+.process-step {
+  background: rgba(13, 17, 23, 0.85);
+  border-radius: 15px;
+  padding: 30px 20px;
+  text-align: center;
+  position: relative;
+  transition: all 0.3s ease;
+  border: 1px solid rgba(138, 198, 86, 0.1);
+}
+
+.process-step:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(138, 198, 86, 0.2);
+  border-color: rgba(138, 198, 86, 0.3);
+}
+
+.step-number {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  background: linear-gradient(135deg, #8ac656, #6fa843);
+  color: white;
+  font-size: 1.5rem;
+  font-weight: bold;
+  border-radius: 50%;
+  margin: 0 auto 20px;
+  box-shadow: 0 5px 15px rgba(138, 198, 86, 0.3);
+}
+
+.process-step h4 {
+  color: #8ac656;
+  font-size: 1.3rem;
+  margin-bottom: 15px;
+}
+
+.process-step p {
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* Contact Button */
+.contact-button-container {
+  text-align: center;
+  margin: 60px 0 20px;
+}
+
+.contact-service-button {
+  display: inline-block;
+  padding: 15px 30px;
+  background: linear-gradient(135deg, #8ac656, #6fa843);
+  color: white;
+  text-decoration: none;
+  border-radius: 30px;
+  font-weight: 600;
+  font-size: 1.1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 5px 15px rgba(138, 198, 86, 0.3);
+  position: relative;
+  overflow: hidden;
+}
+
+.contact-service-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.7s ease;
+}
+
+.contact-service-button:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(138, 198, 86, 0.4);
+}
+
+.contact-service-button:hover::before {
+  left: 100%;
+}
+
+/* Responsive Styles */
+@media (max-width: 1200px) {
+  .service-title {
+    font-size: 2.5rem;
+  }
+  
+  .service-description {
+    font-size: 1rem;
+  }
+  
+  .web-highlights {
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  }
+}
+
+@media (max-width: 992px) {
+  .service-page {
+    padding: 60px 15px;
+  }
+  
+  .service-title {
+    font-size: 2.2rem;
+  }
+  
+  .highlight-image-container {
+    height: 180px;
+  }
+  
+  .process-steps {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .service-page {
+    padding: 50px 15px;
+  }
+  
+  .service-title {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  .web-highlights {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  
+  .highlight-card {
+    max-width: 500px;
+    margin: 0 auto;
+  }
+  
+  .highlight-image-container {
+    height: 200px;
+  }
+  
+  .services-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+  
+  .contact-service-button {
+    padding: 12px 25px;
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .service-page {
+    padding: 40px 10px;
+  }
+  
+  .service-title {
+    font-size: 1.8rem;
+  }
+  
+  .service-description {
+    font-size: 0.95rem;
+    line-height: 1.6;
+  }
+  
+  .web-services h3,
+  .development-process h3 {
+    font-size: 1.5rem;
+  }
+  
+  .process-steps {
+    grid-template-columns: 1fr;
+  }
+  
+  .process-step {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .service-item {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+  
+  .contact-service-button {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 400px) {
+  .service-title {
+    font-size: 1.6rem;
+  }
+  
+  .highlight-content h3 {
+    font-size: 1.3rem;
+  }
+  
+  .step-number {
+    width: 40px;
+    height: 40px;
+    font-size: 1.2rem;
+  }
+  
+  .process-step h4 {
+    font-size: 1.1rem;
+  }
 }

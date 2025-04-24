@@ -24,7 +24,7 @@ const ContactUs = () => {
     setIsSuccess(false);
 
     try {
-      const response = await fetch("http://localhost:8003/api/contact", {
+      const response = await fetch("https://api2.marketmindsdigitalsolutions.com/api/contact", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -157,10 +157,29 @@ const ContactUs = () => {
               </a>
             </p>
           </div>
-        </div>
+            <div className="map-container">
+  <h2>Find Us</h2>
+  <div className="google-map" style={{ marginTop: '30px' }}>
+    <iframe
+      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d28031.600010115!2d77.3061146!3d28.6351575!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfb387d8504bf%3A0xb4fe1cc201242626!2sMarketMinds%20Digital%20Solutions!5e0!3m2!1sen!2sin!4v1698764581636!5m2!1sen!2sin"
+      width="100%"
+      height="450"
+      style={{ border: 0 }}
+      allowFullScreen=""
+      loading="lazy"
+      referrerPolicy="no-referrer-when-downgrade"
+      title="MarketMinds Digital Solutions - Vaishali Office"
+    ></iframe>
+  </div>
+</div>
+
+          </div>
+        
       </div>
     </div>
   );
 };
 
 export default ContactUs;
+
+

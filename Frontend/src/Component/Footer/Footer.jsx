@@ -21,6 +21,8 @@ const Footer = () => {
             <li><Link to="/branding-graphic-design/branding-graphic-design">Branding & Design</Link></li>
             <li><Link to="/e-commerce-optimization/e-commerce-optimization">E-Commerce Solutions</Link></li>
             <li><Link to="/professional-training/professional-training">Professional Training</Link></li>
+            <li><Link to="/lead-generation-sales/lead-generation-sales">Lead Genration And Sales</Link></li>
+            <li><Link to="/in-house-studio/in-house-studio">In-House Studio</Link></li>
           </ul>
         </div>
 
@@ -31,6 +33,7 @@ const Footer = () => {
             <li><Link to="/about">About Us</Link></li>
             <li><Link to="/servicesSection">Services</Link></li>
             <li><Link to="/contact">Contact Us</Link></li>
+            <li><Link to="/blog">Blog</Link></li>
           </ul>
         </div>
 
@@ -41,7 +44,7 @@ const Footer = () => {
           <div className="social-links">
             <a href="https://www.facebook.com/profile.php?id=61575161181120" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
             <a href="https://www.linkedin.com/company/marketminds-digital-solutions/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-            <a href="https://www.instagram.com/mark.etmindsdigitalsolutions" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+            <a href="https://www.instagram.com/marketmindsdigitalsolutions1?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
           </div>
         </div>
       </div>

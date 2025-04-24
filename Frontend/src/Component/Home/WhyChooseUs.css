@@ -1,0 +1,87 @@
+/* Why Choose Us Section Styles */
+.why-choose-us {
+  padding: 80px 20px;
+  background-color: #ffffff;
+  text-align: center;
+}
+
+.why-choose-us h2 {
+  font-size: 2.5rem;
+  color: #1a1a1a;
+  margin-bottom: 50px;
+  position: relative;
+}
+
+.why-choose-us h2::after {
+  content: '';
+  position: absolute;
+  bottom: -15px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background-color: var(--primary-green);
+}
+
+.features-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.feature {
+  padding: 30px 20px;
+  background: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease;
+}
+
+.feature:hover {
+  transform: translateY(-10px);
+}
+
+.feature-icon {
+  font-size: 2.5rem;
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+}
+
+.feature h3 {
+  font-size: 1.5rem;
+  color: #1a1a1a;
+  margin-bottom: 15px;
+}
+
+.feature p {
+  color: #666666;
+  line-height: 1.6;
+  margin: 0;
+}
+
+@media (max-width: 992px) {
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-choose-us {
+    padding: 60px 15px;
+  }
+
+  .why-choose-us h2 {
+    font-size: 2rem;
+  }
+
+  .features-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .feature {
+    padding: 25px 15px;
+  }
+}

@@ -12,14 +12,18 @@ import SeoOptimization from './Pages/ServiceSection/SEO-Optimization/seo-optimiz
 import BrandingGraphicDesign from './Pages/ServiceSection/branding-graphic-design/branding-graphic-design';
 import EcommerceOptimization from './Pages/ServiceSection/e-commerce-optimization/e-commerce-optimization';
 import ProfessionalTraining from './Pages/ServiceSection/professional-training/professional-training';
+import InHouseStudio from './Pages/ServiceSection/in-house-studio/in-house-studio.jsx';
+import LeadGenerationSales from './Pages/ServiceSection/lead-generation-sales/lead-generation-sales.jsx';
 import Blog from './Pages/blog/blog';
+import ScrollToTop from './Component/ScrollToTop.js';
 import './index.css';
 
 const App = () => {
   return (
     <>
       <Header />
-      <main className="main-content">
+      <ScrollToTop />
+      <div className="Main-Container">
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/servicesSection" element={<ServiceSection />} />
@@ -31,10 +35,12 @@ const App = () => {
           <Route path="/branding-graphic-design/branding-graphic-design" element={<BrandingGraphicDesign />} />
           <Route path="/e-commerce-optimization/e-commerce-optimization" element={<EcommerceOptimization />} />
           <Route path="/professional-training/professional-training" element={<ProfessionalTraining />} />
+          <Route path="/in-house-studio/in-house-studio" element={<InHouseStudio />} />
+          <Route path="/lead-generation-sales/lead-generation-sales" element={<LeadGenerationSales />} />
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:slug" element={<Blog />} />
         </Routes>
-      </main>
+        </div>
       <Footer />
     </>
   );

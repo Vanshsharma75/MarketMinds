@@ -37,10 +37,9 @@ const generateSlug = (title) => {
 };
 
 // Create new blog
-// Add at the top of the file
-const BASE_URL = 'http://localhost:8003';
+// At the top of the file
+const BASE_URL = 'https://api2.marketmindsdigitalsolutions.com';
 
-// In createBlog function
 export const createBlog = async (req, res) => {
   try {
     const { title, content, preview, author, tags } = req.body;

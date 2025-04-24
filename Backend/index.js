@@ -37,3 +37,7 @@ mongoose.connect(process.env.MONGODB_URI)
     });
   })
   .catch((err) => console.error('MongoDB connection error:', err));
+  
+//   const formData = new FormData();
+// formData.append('image', fileInput.files[0]);
+// // other form data

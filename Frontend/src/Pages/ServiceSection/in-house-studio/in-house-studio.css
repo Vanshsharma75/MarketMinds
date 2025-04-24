@@ -1,0 +1,204 @@
+.service-page {
+    padding: 40px 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+    min-height: 70vh;
+    background: transparent;
+    position: relative;
+  }
+  
+  .service-section {
+    background: rgba(13, 17, 23, 0.85);
+    border-radius: 20px;
+    padding: 40px;
+    box-shadow: 0 8px 32px rgba(138, 198, 86, 0.15),
+                inset 0 0 2px rgba(138, 198, 86, 0.3);
+    border: 1px solid rgba(138, 198, 86, 0.2);
+    transition: all 0.4s ease;
+  }
+  
+  .service-title {
+    color: #8ac656;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 2rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .service-description {
+    color: rgba(255, 255, 255, 0.9);
+    font-size: 1.125rem;
+    line-height: 1.75;
+    margin-bottom: 1.5rem;
+    text-align: justify;
+  }
+  
+  .studio-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin: 40px 0;
+  }
+  
+  .photography-section,
+  .videography-section {
+    background: rgba(13, 17, 23, 0.95);
+    border-radius: 15px;
+    padding: 30px;
+    border: 1px solid rgba(138, 198, 86, 0.2);
+    transition: transform 0.3s ease;
+  }
+  
+  .photography-section:hover,
+  .videography-section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(138, 198, 86, 0.2);
+  }
+  
+  .service-subtitle {
+    color: #8ac656;
+    font-size: 1.8rem;
+    margin-bottom: 25px;
+    text-align: center;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  }
+  
+  .services-list {
+    list-style: none;
+    padding: 0;
+    display: grid;
+    gap: 20px;
+  }
+  
+  .services-list li {
+    background: rgba(138, 198, 86, 0.1);
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid rgba(138, 198, 86, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .services-list li:hover {
+    background: rgba(138, 198, 86, 0.15);
+    transform: translateX(10px);
+    border-color: rgba(138, 198, 86, 0.3);
+  }
+  
+  .services-list h4 {
+    color: #8ac656;
+    font-size: 1.2rem;
+    margin-bottom: 10px;
+  }
+  
+  .services-list p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.95rem;
+    line-height: 1.5;
+  }
+  
+  .studio-features {
+    margin-top: 40px;
+    padding: 30px;
+    background: rgba(13, 17, 23, 0.95);
+    border-radius: 15px;
+    border: 1px solid rgba(138, 198, 86, 0.2);
+  }
+  
+  .features-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    padding: 0;
+    list-style: none;
+  }
+  
+  .features-list li {
+    color: rgba(255, 255, 255, 0.9);
+    padding: 15px 20px;
+    background: rgba(138, 198, 86, 0.1);
+    border-radius: 8px;
+    position: relative;
+    padding-left: 35px;
+    transition: all 0.3s ease;
+  }
+  
+  .features-list li::before {
+    content: "🎯";
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+  }
+  
+  .features-list li:hover {
+    background: rgba(138, 198, 86, 0.15);
+    transform: translateX(5px);
+  }
+  
+  .contact-button-container {
+    margin-top: 40px;
+    text-align: center;
+  }
+  
+  .contact-service-button {
+    display: inline-block;
+    background: rgba(138, 198, 86, 0.9);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 30px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border: 2px solid transparent;
+    box-shadow: 0 4px 15px rgba(138, 198, 86, 0.3);
+  }
+  
+  .contact-service-button:hover {
+    background: rgba(13, 17, 23, 0.8);
+    color: #8ac656;
+    border-color: #8ac656;
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(138, 198, 86, 0.4);
+  }
+  
+  @media (max-width: 768px) {
+    .service-section {
+      padding: 30px 20px;
+    }
+  
+    .service-title {
+      font-size: 2rem;
+    }
+  
+    .service-subtitle {
+      font-size: 1.5rem;
+    }
+  
+    .studio-services {
+      grid-template-columns: 1fr;
+      gap: 20px;
+    }
+  
+    .services-list li {
+      padding: 15px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .service-title {
+      font-size: 1.8rem;
+    }
+  
+    .features-list {
+      grid-template-columns: 1fr;
+    }
+  
+    .contact-service-button {
+      padding: 12px 25px;
+      font-size: 1rem;
+    }
+  }
