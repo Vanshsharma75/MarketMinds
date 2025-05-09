@@ -1,51 +1,50 @@
 :root {
-  --primary-green: #8ac656;
-  --primary-dark: #6fa843;
-  --primary-light: #a8e065;
-  --accent-hover: #009e45;
+  --primary-green: #75b675;
+  --primary-dark: #75b675;
+  --primary-light: #75b675;
+  --accent-hover: #75b675;
   --text-primary: #ffffff;
   --text-secondary: rgba(255, 255, 255, 0.9);
   --background-dark: #0a0a0a;
   --background-light: #1a1a1a;
-  --shadow-color: rgba(138, 198, 86, 0.2);
+  --shadow-color:#75b675;
 }
 
+/* Header Styles */
 .header {
   background-color: var(--background-dark);
-  box-shadow: 0 2px 4px var(--shadow-color);
   position: fixed;
   top: 0;
   left: 0;
   right: 0;
   z-index: 1000;
-  padding: 0.5rem 0;
+  padding: 0.2rem 1rem;
   width: 100%;
   transition: all 0.3s ease;
 }
 
 .header-scrolled {
-  padding: 0.2rem 0;
-  box-shadow: 0 4px 8px var(--shadow-color);
+  padding: 0.2rem;
 }
 
+/* Navbar Layout */
 .navbar {
-  width: 100%;;
-  max-width: 1450px;
-  margin:0 auto;
-  padding: 0.5rem 2rem ;
+  max-width: 1500px;
+  margin: auto;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  width: 100%;
 }
 
-/* Logo styles - LEFT SIDE */
+/* Logo */
 .logo {
   display: flex;
   align-items: center;
-  text-decoration: none;
   gap: 1rem;
+  text-decoration: none;
   flex: 1;
-  width: 30%;
+  min-width: 30%;
 }
 
 .logo1 {
@@ -63,12 +62,11 @@
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 1px;
-  transition: color 0.3s ease;
   margin: 0;
   white-space: nowrap;
 }
 
-/* Navigation menu - MIDDLE */
+/* Navigation Menu */
 .nav-menu {
   display: flex;
   align-items: center;
@@ -78,26 +76,21 @@
 
 .nav-menu ul {
   list-style: none;
+  display: flex;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
-  display: flex;
-  gap: 2rem;
-  justify-content: center;
-}
-
-.nav-menu li {
-  margin: 0;
 }
 
 .nav-menu a {
   text-decoration: none;
-  color: var(--text-primary);
+  color: #75b675;
   font-weight: 500;
-  transition: color 0.3s ease;
   font-size: 0.9rem;
   text-transform: uppercase;
   position: relative;
   padding: 0.5rem 0;
+  transition: color 0.3s ease;
 }
 
 .nav-menu a::after {
@@ -107,7 +100,7 @@
   left: 0;
   width: 0;
   height: 2px;
-  background-color: var(--primary-green);
+  background-color: #75b675;
   transition: width 0.3s ease;
 }
 
@@ -116,17 +109,17 @@
 }
 
 .nav-menu a:hover {
-  color: var(--primary-green);
+  color: #75b675;
 }
 
-/* Contact info - RIGHT SIDE */
+/* Desktop Contact Info */
 .desktop-contact {
   display: flex;
   align-items: center;
   gap: 1.5rem;
   flex: 1;
   justify-content: flex-end;
-  max-width: 30%;
+  min-width: 30%;
 }
 
 .phone-number {
@@ -139,12 +132,12 @@
 }
 
 .phone-number:hover {
-  color: var(--primary-green);
+  color: #75b675;
 }
 
 .phone-icon {
-  transform: rotate(90deg);
-  color: var(--primary-green);
+  rotate: 90deg;
+  color: #75b675;
 }
 
 .social-icons {
@@ -153,20 +146,19 @@
 }
 
 .social-icon {
-  color: var(--primary-green);
+  color: #75b675;
   font-size: 1.2rem;
   transition: all 0.3s ease;
 }
 
 .social-icon:hover {
-  color: var(--primary-light);
   transform: translateY(-2px);
 }
 
+/* Menu Toggle (for mobile) */
 .menu-toggle {
   display: none;
-  background: none;
-  background-color: transparent;
+  background: transparent;
   border: none;
   cursor: pointer;
   padding: 0.5rem;
@@ -181,32 +173,48 @@
 
 .icon {
   font-size: 1.5rem;
-  color: var(--text-primary);
+  color: #75b675;
   transition: color 0.3s ease;
 }
 
-/* Mobile Menu Styles */
+.menu-toggle.active .icon {
+  color: #75b675;
+}
+/* Responsive Styles */
 @media (max-width: 1024px) {
   .site-title {
     font-size: 1rem;
   }
-  
+
   .nav-menu ul {
-    gap: 1.5rem;
+    gap: 1.2rem;
   }
-  
+
   .phone-number span {
     display: none;
+  }
+
+  .logo1 {
+    height: 50px;
   }
 }
 
 @media (max-width: 768px) {
   .navbar {
-    padding: 0.5rem 1rem;
+    flex-wrap: wrap;
+    padding: 0.5rem 0.8rem;
+    justify-content: space-between;
   }
 
   .logo {
-    max-width: 80%;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .site-title {
+    font-size: 1rem;
+    display: none; /* Hide site title when nav menu collapses */
   }
 
   .nav-menu {
@@ -214,9 +222,10 @@
     top: 0;
     right: -100%;
     height: 100vh;
-    width: 70%;
-    max-width: 300px;
-    background-color: var(--background-dark);
+    width: 75%;
+    max-width: 320px;
+    backdrop-filter: blur(8px);
+    background-color: rgba(10, 10, 10, 0.95);
     flex-direction: column;
     justify-content: flex-start;
     padding-top: 5rem;
@@ -231,19 +240,21 @@
 
   .nav-menu ul {
     flex-direction: column;
+    align-items: center;
     width: 100%;
     gap: 1.5rem;
     padding: 1rem 0;
   }
 
   .nav-menu li {
+    width: 100%;
     text-align: center;
-    padding: 0.5rem 0;
   }
 
   .nav-menu a {
-    padding: 0.5rem 1rem;
     font-size: 1rem;
+    width: 100%;
+    padding: 0.8rem 0;
   }
 
   .desktop-contact {
@@ -252,11 +263,11 @@
 
   .menu-toggle {
     display: block;
-    background-color: transparent;
+    margin-left: auto;
   }
 
-  .menu-toggle.active .icon {
-    color: var(--primary-green);
+  .logo1 {
+    height: 45px;
   }
 }
 
@@ -266,6 +277,26 @@
   }
 
   .site-title {
-    font-size: 0.9rem;
+    display: none;
+  }
+
+  .nav-menu {
+    width: 100%;
+  }
+
+  .nav-menu ul {
+    gap: 1rem;
+  }
+
+  .social-icon {
+    font-size: 1rem;
+  }
+
+  .menu-toggle {
+    padding: 0.3rem;
+  }
+
+  .icon {
+    font-size: 1.3rem;
   }
 }

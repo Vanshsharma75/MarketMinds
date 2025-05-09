@@ -2,93 +2,107 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import './digital-markiting.css';
 
+import expertTeamImg from '../../../../public/assets/expert.png';
+import customSolutionsImg from '../../../../public/assets/costom-solutions.png';
+import provenSuccessImg from '../../../../public/assets/sucess.png';
+import transparentReportingImg from '../../../../public/assets/statsdata.png';
+import dataDrivenImg from '../../../../public/assets/datadriven.png';
+
 const DigitalMarketingPage = () => {
   return (
-    <div className="service-page">
-      <section className="service-section">
-        <h2 className="service-title">Digital Marketing Services</h2>
-        <p className="service-description">
-          Grow your business with our expert digital marketing solutions. We help you reach
-          your target audience and achieve measurable results through comprehensive digital strategies.
+    <div className="digital-marketing-page">
+
+      {/* Header Section */}
+      <header className="digital-marketing-header">
+        <div className="header-content">
+          <h1>Digital Marketing Services</h1>
+        </div>
+        <p>
+          Grow your business with our expert digital marketing solutions.
+          We help you reach your target audience and achieve measurable
+          results through comprehensive digital strategies.
         </p>
+      </header>
 
-        <div className="marketing-services">
-          <h3>Our Digital Marketing Services Include:</h3>
-          <div className="services-grid">
-            <div className="service-item">
-              <span className="service-icon">→</span>
-              <div className="service-content">
-                <h4>Search Engine Optimization (SEO)</h4>
-                <p>Improve your search rankings and organic traffic</p>
-              </div>
-            </div>
-            <div className="service-item">
-              <span className="service-icon">→</span>
-              <div className="service-content">
-                <h4>Pay-Per-Click Advertising (PPC)</h4>
-                <p>Targeted ads for immediate visibility and results</p>
-              </div>
-            </div>
-            <div className="service-item">
-              <span className="service-icon">→</span>
-              <div className="service-content">
-                <h4>Social Media Marketing</h4>
-                <p>Engage audiences across social platforms</p>
-              </div>
-            </div>
-            <div className="service-item">
-              <span className="service-icon">→</span>
-              <div className="service-content">
-                <h4>Content Marketing</h4>
-                <p>Compelling content that drives engagement</p>
-              </div>
-            </div>
-            <div className="service-item">
-              <span className="service-icon">→</span>
-              <div className="service-content">
-                <h4>Email Marketing</h4>
-                <p>Strategic campaigns for customer retention</p>
-              </div>
-            </div>
-            <div className="service-item">
-              <span className="service-icon">→</span>
-              <div className="service-content">
-                <h4>Analytics & Reporting</h4>
-                <p>Data-driven insights for optimization</p>
-              </div>
-            </div>
+      {/* Services Section */}
+      <section className="marketing-services-section">
+        <h2>Our Digital Marketing Services Include:</h2>
+        <div className="services-grid">
+          <div className="service-card">
+            <div className="dot" />
+            <h3>Search Engine Optimization (SEO)</h3>
+            <p>Improve your search rankings and organic traffic</p>
+          </div>
+          <div className="service-card">
+            <div className="dot" />
+            <h3>Pay-Per-Click Advertising (PPC)</h3>
+            <p>Targeted ads for immediate visibility and results</p>
+          </div>
+          <div className="service-card">
+            <div className="dot" />
+            <h3>Social Media Marketing</h3>
+            <p>Engage audiences across social platforms</p>
+          </div>
+          <div className="service-card">
+            <div className="dot" />
+            <h3>Content Marketing</h3>
+            <p>Compelling content that drives engagement</p>
+          </div>
+          <div className="service-card">
+            <div className="dot" />
+            <h3>Email Marketing</h3>
+            <p>Strategic campaigns for customer retention</p>
+          </div>
+          <div className="service-card">
+            <div className="dot" />
+            <h3>Analytics & Reporting</h3>
+            <p>Data-driven insights for optimization</p>
+          </div>
+        </div>
+      </section>
+
+      {/* Why Choose Us Section */}
+      <section className="why-choose-us">
+        <div className="top-whychoose">
+          <h2>WHY CHOOSE US?</h2>
+          <h3>More Than Just Posts – It's Strategy That Scales</h3>
+        </div>
+
+        <div className="benefits-grid">
+          <div className="benefit-card-expert">
+            <img src={expertTeamImg} alt="Expert Team" />
+            <h4>Expert Team</h4>
+            <p>Years of industry experience that drive results</p>
+          </div>
+
+          <div className="benefit-card-custom">
+            <h4>Custom Solutions</h4>
+            <p>Tailored to your business needs</p>
+            <img src={customSolutionsImg} alt="Custom Solutions" />
+          </div>
+
+          <div className="benefit-card-sucess">
+            <h4>Proven Success</h4>
+            <p>Track record of marketing results</p>
+            <img src={provenSuccessImg} alt="Proven Success" />
+          </div>
+
+          <div className="benefit-card-transparent">
+            <h4>Transparent Reporting</h4>
+            <p>Clear insights into performance</p>
+            <img src={transparentReportingImg} alt="Transparent Reporting" />
+          </div>
+
+          <div className="benefit-card-data-driven">
+            <h4>Data Driven Strategy</h4>
+            <p>Maximize ROI</p>
+            <img src={dataDrivenImg} alt="Data Driven Strategy" />
           </div>
         </div>
 
-        <div className="marketing-benefits">
-          <h3>Why Choose Us?</h3>
-          <div className="benefits-grid">
-            <div className="benefit-item">
-              <h4>Proven Success</h4>
-              <p>Track record of delivering results</p>
-            </div>
-            <div className="benefit-item">
-              <h4>Data-Driven Strategy</h4>
-              <p>Maximize ROI through analytics</p>
-            </div>
-            <div className="benefit-item">
-              <h4>Custom Solutions</h4>
-              <p>Tailored to your business needs</p>
-            </div>
-            <div className="benefit-item">
-              <h4>Expert Team</h4>
-              <p>Years of industry experience</p>
-            </div>
-            <div className="benefit-item">
-              <h4>Transparent Reporting</h4>
-              <p>Clear insights into performance</p>
-            </div>
-          </div>
-        </div>
-
-        <div className="contact-button-container">
-          <Link to="/contact" className="contact-service-button">
-            Contact Us About This Service
+        <div className="cta-section1">
+          <Link to="/contact" className="cta-button1">
+            Contact For this Service
           </Link>
         </div>
       </section>

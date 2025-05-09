@@ -1,56 +1,98 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import { FaFacebook, FaLinkedin, FaInstagram } from 'react-icons/fa';
 import './Footer.css';
+import { FaFacebook, FaInstagram, FaLinkedin } from "react-icons/fa";
+import logo from '../../../public/assets/logo1.png';
+import msmeLogo from "../../../public/assets/msme.png";
 
 const Footer = () => {
   return (
-    <footer>
-      <div className="footer-content">
-        <div className="footer-section">
-          <h3>About Us</h3>
-          <p>MarketMinds Digital Solutions specializes in comprehensive digital services, helping businesses thrive in the digital landscape with innovative solutions and strategic expertise.</p>
+    <footer className="mm-footer">
+      <div className="mm-footer__container">
+        {/* About Us */}
+        <div className="mm-footer__section mm-footer__about">
+          <h3 className="mm-footer__heading">About Us</h3>
+          <p className="mm-footer__text">
+            MarketMinds Digital Solutions empowers businesses with impactful digital services, combining innovation, technology, and strategic growth expertise.
+          </p>
         </div>
 
-        <div className="footer-section">
-          <h3>Our Services</h3>
-          <ul className="footer-links">
-            <li><Link to="/Web-Service/website-development">Website Development</Link></li>
-            <li><Link to="/Digital-Marketing/digital-marketing">Digital Marketing</Link></li>
-            <li><Link to="/SEO-Optimization/seo-optimization">SEO Optimization</Link></li>
-            <li><Link to="/branding-graphic-design/branding-graphic-design">Branding & Design</Link></li>
-            <li><Link to="/e-commerce-optimization/e-commerce-optimization">E-Commerce Solutions</Link></li>
-            <li><Link to="/professional-training/professional-training">Professional Training</Link></li>
-            <li><Link to="/lead-generation-sales/lead-generation-sales">Lead Genration And Sales</Link></li>
-            <li><Link to="/in-house-studio/in-house-studio">In-House Studio</Link></li>
+        {/* Services */}
+        <div className="mm-footer__section mm-footer__services">
+          <h3 className="mm-footer__heading">Our Services</h3>
+          <ul className="mm-footer__list">
+            {[
+              ["Website Development", "/Web-Service/website-development"],
+              ["Digital Marketing", "/Digital-Marketing/digital-marketing"],
+              ["SEO Optimization", "/SEO-Optimization/seo-optimization"],
+              ["Branding & Design", "/branding-graphic-design/branding-graphic-design"],
+              ["E-Commerce Solutions", "/e-commerce-optimization/e-commerce-optimization"],
+              ["Professional Training", "/professional-training/professional-training"],
+              ["Lead Generation & Sales", "/lead-generation-sales/lead-generation-sales"],
+              ["In-House Studio", "/in-house-studio/in-house-studio"]
+            ].map(([name, path], i) => (
+              <li key={i} className="mm-footer__item">
+                <Link className="mm-footer__link" to={path}>{name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div className="footer-section">
-          <h3>Quick Links</h3>
-          <ul className="footer-links">
-            <li><Link to="/">Home</Link></li>
-            <li><Link to="/about">About Us</Link></li>
-            <li><Link to="/servicesSection">Services</Link></li>
-            <li><Link to="/contact">Contact Us</Link></li>
-            <li><Link to="/blog">Blog</Link></li>
+        {/* Quick Links */}
+        <div className="mm-footer__section mm-footer__quick-links">
+          <h3 className="mm-footer__heading">Quick Links</h3>
+          <ul className="mm-footer__list">
+            {[
+              ["Home", "/"],
+              ["About Us", "/about"],
+              ["Services", "/servicesSection"],
+              ["Contact Us", "/contact"],
+              ["Blog", "/blog"]
+            ].map(([name, path], i) => (
+              <li key={i} className="mm-footer__item">
+                <Link className="mm-footer__link" to={path}>{name}</Link>
+              </li>
+            ))}
           </ul>
         </div>
 
-        <div className="footer-section">
-          <h3>Connect With Us</h3>
-          <p>Email: marketmindsdigitalsolutions@gmail.com</p>
-          <p>Phone: +91 9997957533</p>
-          <div className="social-links">
-            <a href="https://www.facebook.com/profile.php?id=61575161181120" target="_blank" rel="noopener noreferrer"><FaFacebook /></a>
-            <a href="https://www.linkedin.com/company/marketminds-digital-solutions/" target="_blank" rel="noopener noreferrer"><FaLinkedin /></a>
-            <a href="https://www.instagram.com/marketmindsdigitalsolutions1?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer"><FaInstagram /></a>
+        {/* Contact + Logo */}
+        <div className="mm-footer__section mm-footer__contact">
+          <div className="mm-footer__logo-section">
+            <img src={logo} alt="MarketMinds Logo" className="mm-footer__logo" />
+            <h2 className="mm-footer__company-name">
+              MARKETMINDS<br />
+              <span className="mm-footer__company-tagline">DIGITAL SOLUTIONS</span>
+            </h2>
+          </div>
+          <div className="mm-footer__contact-info">
+            
+            <p className="mm-footer__contact-text"><spam>📧 </spam> marketmindsdigitalsolutions@gmail.com</p>
+            <p className="mm-footer__contact-text">📞+91 9997957533</p>
+          </div>
+          <div className="mm-footer__social-media">
+            <a href="https://www.facebook.com/profile.php?id=61575161181120" target="_blank" rel="noopener noreferrer">
+              <FaFacebook className="social-icon1" />
+            </a>
+            <a href="https://www.instagram.com/marketmindsdigitalsolutions1/" target="_blank" rel="noopener noreferrer">
+              <FaInstagram className="social-icon1" />
+            </a>
+            <a href="https://www.linkedin.com/company/marketminds-digital-solutions/" target="_blank" rel="noopener noreferrer">
+              <FaLinkedin className="social-icon1" />
+            </a>
+          </div>
+          <div className="mm-footer__accreditation">
+            <p className="mm-footer__accreditation-text">Accredited By</p>
+            <img src={msmeLogo} alt="MSME Logo" className="mm-footer__msme-logo" />
           </div>
         </div>
       </div>
 
-      <div className="footer-bottom">
-        <p>&copy; {new Date().getFullYear()} MarketMinds Digital Solutions. All rights reserved.</p>
+      {/* Bottom Bar */}
+      <div className="mm-footer__bottom">
+        <p className="mm-footer__copyright">
+          © 2025 <strong>MarketMinds Digital Solutions</strong>. All rights reserved.
+        </p>
       </div>
     </footer>
   );

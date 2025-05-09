@@ -1,187 +1,409 @@
-/* Services Preview Section Styles */
 .services-preview {
-  padding-top: 30px;
-  background-color: black;
-  text-align: center;
-  position: relative;
+  padding: 10px;
+  background-image: url('../../../public/assets/Background.jpg');
+  background-size: cover;
+  background-position: center;
+  color: white;
   overflow: hidden;
 }
 
-.services-preview::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 1;
+.services-title {
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #75b675;
+  text-align: center;
+  margin-bottom: 40px;
 }
 
-.services-preview h2 {
-  font-size: 2.5rem;
-  color: #fff;
-  margin-bottom: 50px;
+.services-layout {
+  display: flex;
+  gap:0px;
+  max-width: 1440px;
+  margin: 29px ;
+}
+
+.services-list {
+  display: flex; 
+  flex-direction: column;
+}
+
+.service-indicator {
+  position: absolute;
+  left: -25px;
+  width: 6px;
+  height: 50px;
+  background: #75b675;
+  border-radius: 5px;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+.service-items {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
   position: relative;
+  padding: 20px;
+}
+
+.service-items::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 19px;
+  bottom: 25px;
+  width: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+}
+
+.service-item1 {
+  position: relative;
+  opacity: 0.7;
+  transition: all 0.4s ease, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  cursor: pointer;
+  border-radius: 12px;
+  will-change: transform, opacity;
+}
+
+.service-item1:hover,
+.service-item1.active {
+  transform: translateX(5px);
+  opacity: 1;
+}
+
+
+.service-item1.active .service-link {
+  background: #75b675;
+  color: black;
+}
+
+.service-link {
+  color: white;
+  padding: 12px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  border-radius: 30px;
+  text-decoration: none;
+}
+
+.arrow {
+  opacity: 0;
+  transition: all 0.2s ease;
+  transform: translateX(-5px);
+}
+
+.service-item1:hover .arrow,
+.service-item1.active .arrow {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+@keyframes activate-service {
+  0% {
+    transform: scale(0.95) translateX(-10px);
+    opacity: 0.5;
+  }
+  40% {
+    transform: scale(1.05) translateX(2px);
+    opacity: 0.8;
+  }
+  70% {
+    transform: scale(1.02) translateX(4px);
+    opacity: 0.95;
+  }
+  100% {
+    transform: scale(1) translateX(5px);
+    opacity: 1;
+  }
+}
+
+@keyframes deactivate-service {
+  0% {
+    transform: scale(1) translateX(5px);
+    opacity: 1;
+  }
+  40% {
+    transform: scale(1.05) translateX(-2px);
+    opacity: 0.7;
+  }
+  70% {
+    transform: scale(0.95) translateX(-2px);
+    opacity: 0.5;
+  }
+  100% {
+    transform: scale(0.95) translateX(-10px);
+    opacity: 0.5;
+  }
+}
+.service-item1.hover {
+  animation: activate-service 1.2s cubic-bezier(0.22, 1, 0.36, 1) backwards;
   z-index: 2;
 }
 
-.services-preview h2::after {
-  content: '';
-  position: absolute;
-  bottom: -15px;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 80px;
-  height: 3px;
-  background-color: var(--primary-green);
+.service-item1:not(.hover) {
+  animation: deactivate-service 1.2s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  z-index: 1;
+}
+.service-link:hover {
+  background: #BFF208;
+  color: black;
+}
+.service-link:hover .arrow {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-.service-container {
-  display: grid;
-  grid-template-columns: repeat(3,2fr);
-  gap: 20px;
-  width: 90%;
-  margin: auto;
-  z-index: 3;
-  position: relative;
-}
-
-.service-card {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 10px;
-  transition: all 0.3s ease;
+.services-content {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-}
-
-.service-card:hover {
-  transform: translateY(-20px);
-  background: rgba(255, 255, 255, 0.15);
-  box-shadow: 10px 30px rgba(138, 198, 86, 0.2);
+  flex-direction: row;
+  gap: 30px;
+  width: 100%;
+  max-width: 1100px;
+  padding: 20px;
+  justify-content: center;
 }
 
 .service-image {
-  width: 100px;
-  height: 100px;
-  object-fit: contain;
-  margin:20px 0 10px 0;
-}
-
-.service-title-link {
-  color: white;
-  text-decoration: none;
-}
-
-.service-title-link h3 {
-  margin:15px;
-  font-size: 1.5rem;
-  color: var(--primary-green);
-}
-
-.view-more {
-  display: inline-block;
-  margin-top: 40px;
-  padding: 12px 30px;
-  background: var(--primary-green);
-  color: white;
-  border-radius: 25px;
-  text-decoration: none;
-  transition: all 0.3s ease;
-  z-index: 2;
+  width: 100%;
+  height: auto;
+  max-height: 900px;
+  object-fit: cover;
+  border-radius: 12px;
   position: relative;
+  top: 0;
+  left: 0;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  opacity: 1;
+  transform: scale(1.02);
 }
 
-.view-more:hover {
-  background: var(--primary-dark);
-  transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+.service-image img.active {
+  opacity: 1;
+  transform: scale(1);
+  filter: blur(2px);
+  z-index: 3;
 }
 
-@media (max-width: 992px) {
-  .service-container {
-    grid-template-columns: repeat(3, 1fr);
-    padding: 5px;
-  }
+.service-image img:hover {
+  filter: blur(0px);
+  transform: scale(1.05);
+  opacity: 0.9;
 }
 
-@media (max-width: 768px) {
-  .services-preview {
-    padding: 60px 15px;
-  }
 
-  .services-preview h2 {
-    font-size: 2rem;
-    margin-bottom: 40px;
-  }
+.projects-preview img {
+  width: 100%;
+  height: auto;
+  max-height: 200px;
+  object-fit: cover;
+  border-radius: 12px;
+  transition: transform 0.3s ease, opacity 0.3s ease;
+}
 
-  .service-container {
-    display: flex;
+.projects-preview img:hover {
+  transform: scale(1.05);
+  opacity: 0.9;
+}
+
+.projects-section {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  width: 100%;
+  gap: 20px;
+}
+
+.projects-preview {
+  background-color: #000000;
+  border-radius: 12px;
+  position: relative;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.projects-preview span {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  color: black;
+  font-weight: bold;
+  font-size: 1rem;
+}
+
+.view-projects-btn {
+  background: white;
+  color: black;
+  text-decoration: none;
+  padding: 30px 0 30px 0;
+  border-radius: 30px;
+  font-weight: 700;
+  text-align: center;
+  transition: transform 0.2s ease;
+}
+
+.view-projects-btn:hover {
+  transform: translateY(-5px);
+  background-color: #ffffffd3;
+  color: black;
+}
+
+/* Animations */
+.fade-in {
+  opacity: 1;
+}
+
+.fade-out {
+  opacity: 0;
+}
+
+/* images responsive */
+
+.service-image img {
+  width: 100%;
+  height: auto;
+  max-height: 400px;
+  object-fit: cover;
+  border-radius: 12px;
+}
+
+@media screen and (max-width: 768px) {
+  .service-image img {
+    max-height: 300px;
+    height: fit-content;
+  }
+  .projects-section {
+    width: 100%;
+  }
+  .services-content {
     flex-direction: column;
-    gap: 20px;
-    padding: 15px;
-  }
-
-  .service-card {
-    flex-direction: row;
-    text-align: left;
-    gap: 20px;
     align-items: center;
   }
+}
 
-  .service-image {
-    width: 70px;
-    height: 70px;
-    margin: 0;
-  }
+.projects-preview {
+  width: 100%;
+  height: auto;
+}
 
-  .service-title-link h3 {
-    font-size: 1.3rem;
-    margin-top:20px;
-    text-align: left;
-  }
+.projects-preview img {
+  width: 100%;
+  height: fit-content;
+  max-height: 250px;
+  object-fit: cover;
+  border-radius: 12px;
+}
 
-  .service-card:hover {
-    transform: translateX(20px);
+@media screen and (max-width: 768px) {
+  .projects-preview img {
+    max-height: 160px;
   }
 }
 
-@media screen and (max-width: 480px) {
-  .services-preview {
-    padding: 40px 10px;
+@media screen and (max-width: 500px) {
+  .projects-preview img {
+    max-height: 140px;
+  }
+  .view-projects-btn {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .service-image img {
+    max-height: 200px;
+  }
+}
+
+/* Responsive */
+/* Laptop-specific styles (1024px - 1440px) */
+@media screen and (min-width: 1024px) and (max-width: 1440px) {
+  .services-layout {
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0 40px;
+    gap: 40px;
   }
 
-  .services-preview h2 {
+  .service-items {
+    padding: 25px;
+    gap: 20px;
+  }
+
+  .service-link {
+    font-size: 1rem;
+    padding: 14px 22px;
+  }
+
+  .services-content {
+    gap: 40px;
+    padding: 25px;
+  }
+
+  .service-image img {
+    max-height: 500px;
+  }
+
+  .projects-preview img {
+    max-height: 220px;
+  }
+
+  .projects-preview span {
+    font-size: 1rem;
+    bottom: 18px;
+    right: 18px;
+  }
+
+  .view-projects-btn {
+    font-size: 1.1rem;
+    padding: 20px 30px;
+  }
+}
+
+@media screen and (max-width: 1024px) {
+  .services-layout {
+    flex-direction: column;
+    padding: 0 20px;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .services-title {
     font-size: 1.8rem;
   }
 
-  .service-container {
-    padding: 0 10px;
+  .service-link {
+    font-size: 0.9rem;
+    padding: 10px 16px;
   }
 
-  .service-card {
-    gap: 15px;
+  .projects-preview span {
+    font-size: 0.9rem;
+    bottom: 15px;
+    right: 15px;
   }
 
-  .service-image {
-    width: 50px;
-    height: 50px;
+  .view-projects-btn {
+    width: 100%;
+    padding: 15px 20px;
   }
+}
 
-  .service-title-link h3 {
-    margin-top: 15px;
+@media screen and (max-width: 500px) {
+  .services-title {
     font-size: 1.5rem;
   }
 
-  .service-description {
-    font-size: 0.9rem;
+  .services-layout {
+    gap: 20px;
   }
 
-  .view-more {
-    padding: 10px 25px;
-    font-size: 0.9rem;
-    margin-top: 30px;
+  .service-items {
+    padding: 15px;
+    gap: 10px;
+  }
+
+  .service-image {
+    aspect-ratio: 4/3;
   }
 }

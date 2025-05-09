@@ -1,32 +1,34 @@
-import React from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import USLanding from './pages/usLanding/USLanding.jsx';
-import ServicesSection from './pages/services/ServiceSection.jsx';
-import Contact from './pages/contact/Contact.jsx';
-import About from './pages/about/About.jsx';
-import Header from './components/header/header.jsx';
-import Footer from './components/footer/footer.jsx';
-import ScrollToTop from './components/ScrollToTop.js';
-import WebsiteDevelopment from './pages/services/Web-Service/website-development.jsx';
-import DigitalMarketing from './pages/services/Digital-Markiting/digital-marketing.jsx';
-import SeoOptimization from './pages/services/SEO-Optimization/seo-optimization.jsx';
-import BrandingGraphicDesign from './pages/services/branding-graphic-design/branding-graphic-design.jsx';
-import EcommerceOptimization from './pages/services/e-commerce-optimization/e-commerce-optimization.jsx';
-import ProfessionalTraining from './pages/services/professional-training/professional-training.jsx';
-import InHouseStudio from './pages/services/in-house-studio/in-house-studio.jsx';
-import LeadGenerationSales from './pages/services/lead-generation-sales/lead-generation-sales.jsx';
+import React from "react";
+import { Routes, Route } from "react-router-dom";
+import Header from "../src/components/header/header.jsx"; // Updated path
+import Footer from "../src/components/Footer/Footer"; // Updated path
+import About from "../src/components/About/About";    // Updated path
+import Home from "../src/components/Home/Home";       // Updated path
+import ServiceSection from "./Pages/ServiceSection/ServiceSection";
+import ContactUs from "./Pages/Contact-Us/ContactUs";
+import WebsiteDevelopment from './Pages/ServiceSection/Web-Service/website-development';
+import DigitalMarketing from './Pages/ServiceSection/Digital-Markiting/digital-marketing';
+import SeoOptimization from './Pages/ServiceSection/SEO-Optimization/seo-optimization';
+import BrandingGraphicDesign from './Pages/ServiceSection/branding-graphic-design/branding-graphic-design';
+import EcommerceOptimization from './Pages/ServiceSection/e-commerce-optimization/e-commerce-optimization';
+import ProfessionalTraining from './Pages/ServiceSection/professional-training/professional-training';
+import InHouseStudio from './Pages/ServiceSection/in-house-studio/in-house-studio.jsx';
+import LeadGenerationSales from './Pages/ServiceSection/lead-generation-sales/lead-generation-sales.jsx';
+import Blog from './Pages/blog/blog';
+import ScrollToTop from '../src/components/ScrollToTop.js';
+import './index.css';
 
-function App() {
+const App = () => {
   return (
-    <Router>
-      <ScrollToTop />
+    <>
       <Header />
-      <main className="main-content">
+      <ScrollToTop />
+      <div className="Main-Container">
         <Routes>
-          <Route path="/" element={<USLanding />} />
-          <Route path="/services" element={<ServicesSection />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/" element={<Home />} />
+          <Route path="/servicesSection" element={<ServiceSection />} />
           <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<ContactUs />} />
           <Route path="/Web-Service/website-development" element={<WebsiteDevelopment />} />
           <Route path="/Digital-Marketing/digital-marketing" element={<DigitalMarketing />} />
           <Route path="/SEO-Optimization/seo-optimization" element={<SeoOptimization />} />
@@ -35,11 +37,13 @@ function App() {
           <Route path="/professional-training/professional-training" element={<ProfessionalTraining />} />
           <Route path="/in-house-studio/in-house-studio" element={<InHouseStudio />} />
           <Route path="/lead-generation-sales/lead-generation-sales" element={<LeadGenerationSales />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<Blog />} />
         </Routes>
-      </main>
+        </div>
       <Footer />
-    </Router>
+    </>
   );
-}
+};
 
 export default App;

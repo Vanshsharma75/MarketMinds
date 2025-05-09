@@ -1,64 +1,221 @@
-.footer {
-  width: 100%;
-  background-color: var(--background-light);
-  color: var(--text-primary);
+.mm-footer {
+  background: linear-gradient(to top, #f9f9f9, #ffffff);
+  font-family: 'Segoe UI', sans-serif;
+  border-top-left-radius: 60px;
+  border-top-right-radius: 60px;
+  margin-top: 3rem;
+  box-shadow: 0 -2px 25px rgba(0, 0, 0, 0.05);
+  overflow: hidden;
+  animation: fadeIn 1s ease forwards;
 }
 
-.footer-content {
+.mm-footer__container {
+  max-width: 1400px;
+  margin:auto;
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 3rem;
-  width: 100%;
-  margin: 0 auto 3rem;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 2.5rem;
 }
 
-.footer-section {
-  margin-bottom: 2rem;
+.mm-footer__section {
+  padding: 1rem;
+  animation: fadeInUp 0.5s ease forwards;
 }
 
-.footer-section h3 {
-  color: var(--primary-green);
-  margin-bottom: 1.5rem;
+.mm-footer__heading {
+  color: #5ca478;
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 700;
+  border-bottom: 2px solid #75b675;
+  padding-bottom: 0.3rem;
 }
 
-.footer-links {
+.mm-footer__text,
+.mm-footer__contact-text,
+.mm-footer__accreditation-text {
+  color: #444;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.mm-footer__list {
   list-style: none;
   padding: 0;
+  margin: 0;
 }
 
-.footer-links li {
-  margin-bottom: 0.8rem;
+.mm-footer__item {
+  margin-bottom: 0.5rem;
+  opacity: 0;
+  animation: fadeInUp 0.4s ease forwards;
+  animation-delay: 0.2s;
 }
 
-.footer-links a {
-  color: var(--text-secondary);
+.mm-footer__link {
+  color: #333;
   text-decoration: none;
-  transition: color 0.3s ease;
+  font-size: 0.98rem;
+  transition: all 0.3s ease;
 }
 
-.footer-links a:hover {
-  color: var(--primary-green);
+.mm-footer__link:hover {
+  color: #75b675;
+  padding-left: 10px;
+  position: relative;
 }
 
-.social-links {
+.mm-footer__link:hover::after {
+  content: " →";
+  position: absolute;
+  margin-left: 10px;
+  transition: transform 0.5s ease;
+}
+
+.mm-footer__logo-section {
   display: flex;
-  gap: 1rem;
+  flex-direction: row;
+  align-items: center;
+  text-align: center;
+}
+
+.mm-footer__logo {
+  width: 75px;
+  height: auto;
+  margin-bottom: 0.5rem;
+}
+
+.mm-footer__company-name {
+  font-size: 1.6rem;
+  color: #5ca478;
+  font-weight: bold;
+}
+
+.mm-footer__company-tagline {
+  font-size: 1rem;
+  color: #5ca478;
+  font-weight: 600;
+  margin-top: 0.5rem;
+}
+
+.mm-footer__contact-info p{
+  color: #75b675;
+  margin-top: 0.1rem;
+  cursor: pointer;
+}
+.mm-footer__contact-info p{
+  display: flex;
+  flex-direction: row;
+}
+.mm-footer__contact-info p:hover{
+  color: #000000;
+}
+
+
+.mm-footer__social-media {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
   margin-top: 1rem;
 }
 
-.social-links a {
-  color: var(--primary-green);
-  font-size: 1.5rem;
-  transition: color 0.3s ease;
+.social-icon1 {
+  font-size: 1.6rem;
+  color: #333;
+  transition: transform 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.social-links a:hover {
-  color: var(--accent-hover);
+.social-icon1:hover {
+  color: #75b675;
+  transform: translateY(-3px) scale(1.15);
+  box-shadow: 0 4px 12px rgba(191, 242, 8, 0.4);
 }
 
-.footer-bottom {
+.mm-footer__accreditation {
   text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid rgba(138, 198, 86, 0.2);
-  color: var(--text-secondary);
+  margin-top: 1rem;
+}
+
+.mm-footer__msme-logo {
+  width: 150px;
+  height: auto;
+  margin-top: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.mm-footer__msme-logo:hover {
+  transform: scale(1.08);
+}
+
+.mm-footer__bottom {
+  width: 100%;
+  background-color: #222;
+  color: #eee;
+  text-align: center;
+  padding: 1rem;
+  border-top: 1px solid #555;
+}
+
+.mm-footer__copyright {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+/* Animations */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(15px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .mm-footer__company-name {
+    font-size: 1.3rem;
+  }
+
+  .mm-footer__company-tagline {
+    font-size: 0.9rem;
+  }
+
+  .social-icon1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .mm-footer__logo {
+    width: 60px;
+  }
+
+  .mm-footer__company-name {
+    font-size: 1.1rem;
+  }
+
+  .mm-footer__company-tagline {
+    font-size: 0.85rem;
+  }
+
+  .social-icon1 {
+    font-size: 1.3rem;
+  }
+
+  .mm-footer__heading {
+    font-size: 1.1rem;
+  }
 }
